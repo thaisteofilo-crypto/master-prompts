@@ -80,7 +80,7 @@ export default function HomePage() {
         }`}
       >
         {/* Logo */}
-        <div className="px-4 pt-6 pb-8 flex items-center justify-between">
+        <div className="px-4 pt-6 pb-12 flex items-center justify-between">
           <img src="/logo.svg" alt="Overlens" className="h-[18px] w-auto" />
           <button
             onClick={() => setSidebarOpen(false)}
@@ -101,7 +101,7 @@ export default function HomePage() {
               placeholder="Buscar..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="pl-8 pr-12 h-8 text-xs bg-neutral-900 border-border/20"
+              className="pl-8 pr-12 h-8 text-xs bg-neutral-900 border-border/20 rounded-lg"
             />
             <kbd className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground bg-neutral-800 rounded px-1.5 py-0.5 font-mono">
               &#8984;K
@@ -116,13 +116,13 @@ export default function HomePage() {
               setActiveCategory(null);
               setSidebarOpen(false);
             }}
-            className={`w-full text-left px-3 py-1.5 text-[13px] rounded-md transition-colors cursor-pointer mb-0.5 ${
+            className={`w-full text-left px-3 py-1.5 text-[13px] rounded-lg transition-colors cursor-pointer mb-0.5 font-heading uppercase tracking-wide ${
               activeCategory === null
                 ? "bg-neutral-800/80 text-foreground font-medium"
                 : "text-muted-foreground hover:text-foreground hover:bg-neutral-800/40"
             }`}
           >
-            Master 100
+            Master Prompts
           </button>
 
           <div className="h-px bg-neutral-800 my-2 mx-2" />
@@ -136,7 +136,7 @@ export default function HomePage() {
                   setActiveCategory(isActive ? null : cat.slug);
                   setSidebarOpen(false);
                 }}
-                className={`w-full flex items-center justify-between px-3 py-1.5 text-[13px] rounded-md transition-colors cursor-pointer mb-0.5 ${
+                className={`w-full flex items-center justify-between px-3 py-1.5 text-[13px] rounded-lg transition-colors cursor-pointer mb-0.5 ${
                   isActive
                     ? "bg-neutral-800/80 text-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground hover:bg-neutral-800/40"
