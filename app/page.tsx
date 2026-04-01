@@ -80,10 +80,8 @@ export default function HomePage() {
         }`}
       >
         {/* Logo */}
-        <div className="px-4 pt-5 pb-3 flex items-center justify-between">
-          <span className="text-[13px] font-heading font-light tracking-[0.25em] uppercase text-foreground">
-            OVERLENS<sup className="text-[7px] ml-0.5 align-super">&#174;</sup>
-          </span>
+        <div className="px-4 pt-6 pb-8 flex items-center justify-between">
+          <img src="/logo.svg" alt="Overlens" className="h-[18px] w-auto" />
           <button
             onClick={() => setSidebarOpen(false)}
             className="lg:hidden text-muted-foreground hover:text-foreground"
@@ -174,9 +172,7 @@ export default function HomePage() {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </button>
-          <span className="text-sm font-heading font-bold tracking-[0.2em] uppercase">
-            Overlens<sup className="text-[8px]">&#174;</sup>
-          </span>
+          <img src="/logo.svg" alt="Overlens" className="h-[14px] w-auto" />
         </header>
 
         {/* Page content */}
