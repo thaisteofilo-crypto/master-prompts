@@ -176,7 +176,7 @@ export default function HomePage() {
         </header>
 
         {/* Page content */}
-        <div className="px-6 sm:px-10 lg:px-16 py-10 max-w-[1400px]">
+        <div className="px-6 sm:px-10 lg:px-16 py-10 max-w-[1400px] mx-auto">
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl font-heading font-bold tracking-tight uppercase mb-2">
             {activeCategory ? activeCat?.label : "Master 100"}
