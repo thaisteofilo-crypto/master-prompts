@@ -2,6 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  Logo,
+  Button,
+  Input,
+  Field,
+  FieldLabel,
+  FieldError,
+  Heading,
+  HeadingTitle,
+  HeadingDescription,
+} from "@overlens/legacy-components";
 
 export default function LoginPage() {
   const [password, setPassword] = useState("");
@@ -31,36 +42,38 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center px-4">
-      <div className="w-full max-w-sm">
-        <div className="mb-10 flex flex-col items-center">
-          <img src="/logo.svg" alt="Overlens" className="h-5 w-auto mb-8" />
-          <h1 className="text-lg font-heading font-bold uppercase tracking-wide text-foreground">
-            Acesso restrito
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Insira a senha para continuar.
-          </p>
+      <div className="w-full max-w-sm flex flex-col gap-8">
+        <div className="flex flex-col items-center gap-6">
+          <Logo name="overlens" variant="white" size="md" />
+          <Heading className="text-center">
+            <HeadingTitle size="sm">Acesso restrito</HeadingTitle>
+            <HeadingDescription>
+              Insira a senha para continuar.
+            </HeadingDescription>
+          </Heading>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-          <input
-            type="password"
-            placeholder="Senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoFocus
-            className="w-full h-10 px-3 text-sm rounded-lg bg-neutral-900 border border-neutral-700 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-neutral-500 transition-colors"
-          />
-          {error && (
-            <p className="text-xs text-red-400">{error}</p>
-          )}
-          <button
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <Field>
+            <FieldLabel htmlFor="password">Senha</FieldLabel>
+            <Input
+              id="password"
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoFocus
+            />
+            {error && <FieldError>{error}</FieldError>}
+          </Field>
+
+          <Button
             type="submit"
             disabled={loading || !password}
-            className="w-full h-10 rounded-lg bg-neutral-100 text-neutral-900 text-sm font-semibold disabled:opacity-40 hover:bg-white transition-colors cursor-pointer disabled:cursor-not-allowed"
+            className="w-full"
           >
             {loading ? "Verificando..." : "Entrar"}
-          </button>
+          </Button>
         </form>
       </div>
     </div>
